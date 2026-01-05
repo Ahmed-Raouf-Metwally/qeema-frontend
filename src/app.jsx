@@ -23,7 +23,26 @@ const ProtectedRoute = ({ children, role }) => {
     if (!user) return <Navigate to="/login" replace />;
 
     if (role && user.role !== role) {
-        return <Navigate to="/" replace />; // or unauthorized page
+        // If Admin tries to access Student routes (like /), send to Admin Dashboard
+        if (user.role === 'ADMIN') return <Navigate to="/admin" replace />;
+        // If Student tries to access Admin routes, send to Home
+        if (user.role === 'STUDENT') return <Navigate to="/" replace />;
+
+        return <Navigate to="/" replace />;
+    }
+
+    return children;
+};
+
+// Public Route (Accessible only if NOT logged in)
+const PublicRoute = ({ children }) => {
+    const { user, loading } = useAuth();
+
+    if (loading) return <div>Loading...</div>;
+
+    if (user) {
+        if (user.role === 'ADMIN') return <Navigate to="/admin" replace />;
+        return <Navigate to="/" replace />;
     }
 
     return children;
@@ -33,8 +52,16 @@ function AppRoutes() {
     return (
         <Routes>
             <Route element={<AuthLayout />}>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <Login />
+                    </PublicRoute>
+                } />
+                <Route path="/register" element={
+                    <PublicRoute>
+                        <Register />
+                    </PublicRoute>
+                } />
             </Route>
 
             {/* Student Routes */}
