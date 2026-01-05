@@ -1,16 +1,40 @@
-# React + Vite
+# Qeema Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The web client for the Qeema Tech Educational Platform, built with React and Vite.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
+-   **React 18**: UI Library.
+-   **Vite**: Build tool.
+-   **Tailwind CSS**: Styling (No Icons policy).
+-   **Axios**: API Client.
+-   **React Router**: Navigation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Setup & Installation
 
-## React Compiler
+1.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    The app will open at `http://localhost:5173`.
 
-## Expanding the ESLint configuration
+## 🏗 Project Structure
+-   `src/api`: Axios setup and API calls.
+-   `src/components`: Reusable UI components (Button, Input, Card, Table).
+-   `src/context`: Global state (AuthContext).
+-   `src/pages`: Page components (Auth, Student, Admin).
+-   `src/routes`: Route definitions (not strictly used if defined in App.jsx).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎨 Design System
+This project adheres to a strict **"No Icons"** policy.
+-   **Buttons**: Text-based with color variants (Primary, Secondary, Ghost).
+-   **Status**: Indicated by colors (Green for active, Red for danger).
+-   **Layout**: Clean whitespace with simple borders and shadows.
+
+## 🔑 Features
+-   **Student Portal**: View lessons, manage favorites, update profile.
+-   **Admin Dashboard**: Manage lessons, students, and school profile.
