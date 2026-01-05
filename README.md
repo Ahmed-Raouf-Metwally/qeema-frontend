@@ -1,40 +1,58 @@
-# Qeema Frontend Client
+# 🎨 Qeema Tech - Student & Admin Portal
 
-The web client for the Qeema Tech Educational Platform, built with React and Vite.
+Welcome to the frontend repository for the **Qeema Tech Educational Platform**. This modern, responsive web application provides a seamless learning experience for students and a powerful management interface for administrators.
 
-## 🛠 Tech Stack
--   **React 18**: UI Library.
--   **Vite**: Build tool.
--   **Tailwind CSS**: Styling (No Icons policy).
--   **Axios**: API Client.
--   **React Router**: Navigation.
+Designed with a **strict "No-Icon" aesthetic**, the UI relies purely on typography, spacing, color theory, and micro-interactions to create a clean, premium, and distraction-free environment. Built with **React** and **Tailwind CSS**, it ensures high performance and maintainability.
 
-## 🚀 Setup & Installation
+## ✨ Key Features
 
-1.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
+### 🎓 Student Portal
+-   **Browse Lessons**: A visually engaging grid layout to explore educational content.
+-   **Smart Search**: Real-time filtering to find lessons instantly.
+-   **Favorites Manager**: Bookmark lessons for quick access later.
+-   **Profile Management**: Easy-to-use interface for updating personal details and profile images.
 
-2.  **Run Development Server**
-    ```bash
-    npm run dev
-    ```
-    The app will open at `http://localhost:5173`.
+### �️ Admin Dashboard
+-   **Insightful Stats**: At-a-glance overview of platform metrics (Students, Lessons, Favorites).
+-   **Content Management**: Full control to Create, Update, and Delete lessons with live previews.
+-   **Student Database**: Efficient table view to manage registered students.
+-   **School Branding**: Tools to customize the school's identity.
 
-## 🏗 Project Structure
--   `src/api`: Axios setup and API calls.
--   `src/components`: Reusable UI components (Button, Input, Card, Table).
--   `src/context`: Global state (AuthContext).
--   `src/pages`: Page components (Auth, Student, Admin).
--   `src/routes`: Route definitions (not strictly used if defined in App.jsx).
+## 🛠️ Technology Stack
 
-## 🎨 Design System
-This project adheres to a strict **"No Icons"** policy.
--   **Buttons**: Text-based with color variants (Primary, Secondary, Ghost).
--   **Status**: Indicated by colors (Green for active, Red for danger).
--   **Layout**: Clean whitespace with simple borders and shadows.
+-   **Core**: React 18, Vite
+-   **Styling**: Tailwind CSS (v4)
+-   **Routing**: React Router DOM (v6/v7)
+-   **HTTP Client**: Axios
+-   **State Management**: React Context API
 
-## 🔑 Features
--   **Student Portal**: View lessons, manage favorites, update profile.
--   **Admin Dashboard**: Manage lessons, students, and school profile.
+## 🚀 Getting Started
+
+### 1. Prerequisites
+Ensure you have **Node.js** installed.
+
+### 2. Installation
+Clone the repository and install dependencies:
+```bash
+npm install
+```
+
+### 3. Run the Application
+Start the development server:
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5173`.
+
+## 🎨 Design Philosophy
+This project follows a unique design constraint: **No Icons Allowed**.
+-   **Visual Hierarchy**: Achieved through font weights, sizes, and colors (Slate/Blue palette).
+-   **Actions**: "Edit", "Delete", "Add" are textual buttons with distinct visual states (Ghost, Danger, Primary).
+-   **Feedback**: Form errors and status updates use color-coded alerts and borders.
+
+## � Project Structure
+
+-   `src/components`: Reusable, atomic UI components (Button, Input, Card).
+-   `src/pages`: Feature-specific pages organized by role (Auth, Student, Admin).
+-   `src/context`: Centralized Authentication logic.
+-   `src/api`: API configuration and interceptors.
