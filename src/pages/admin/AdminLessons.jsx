@@ -18,7 +18,8 @@ const AdminLessons = () => {
     const fetchLessons = async () => {
         try {
             const res = await axios.get('/admin/lessons'); // or shared /lessons endpoint
-            setLessons(Array.isArray(res.data.data) ? res.data.data : []); // Fallback to empty array if not array
+            // Backend returns { page, limit, total, lessons: [] } in res.data.data
+            setLessons(res.data.data.lessons || []);
         } catch (e) { console.error(e); }
     };
 
