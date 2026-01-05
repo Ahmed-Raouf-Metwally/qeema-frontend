@@ -35,6 +35,9 @@ const Lessons = () => {
                             <button className="px-4 py-2 text-sm rounded-md bg-slate-900 text-white hover:bg-slate-800 transition">
                                 Add to Favorites
                             </button>
+                            <div className="bg-green-600 text-white p-6">
+                                TAILWIND IS WORKING
+                            </div>
                         </div>
                     </div>
                 </div>
