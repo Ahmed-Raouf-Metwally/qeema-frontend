@@ -18,7 +18,7 @@ const AdminLessons = () => {
     const fetchLessons = async () => {
         try {
             const res = await axios.get('/admin/lessons'); // or shared /lessons endpoint
-            setLessons(res.data.data || []);
+            setLessons(Array.isArray(res.data.data) ? res.data.data : []); // Fallback to empty array if not array
         } catch (e) { console.error(e); }
     };
 
@@ -50,7 +50,7 @@ const AdminLessons = () => {
                 setLessons(prev => prev.map(l => l.id === editingLesson.id ? { ...l, ...formData } : l));
             } else {
                 const res = await axios.post('/admin/lessons', formData);
-                setLessons(prev => [...prev, res.data.data]); // Assume returns created object
+                setLessons(prev => [...(Array.isArray(prev) ? prev : []), res.data.data]);
             }
             setIsModalOpen(false);
             setEditingLesson(null);

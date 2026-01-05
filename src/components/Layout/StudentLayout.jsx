@@ -8,6 +8,8 @@ const StudentLayout = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    console.log("Rendering StudentLayout", user);
+
     const handleLogout = () => {
         logout();
         navigate('/login');

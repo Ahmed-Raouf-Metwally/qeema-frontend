@@ -19,7 +19,9 @@ const StudentLessons = () => {
     const fetchLessons = async () => {
         try {
             const res = await axios.get('/lessons');
-            setLessons(res.data.data || []);
+            // Backend returns: { success: true, data: { lessons: [], total: ... } }
+            // So we need res.data.data.lessons
+            setLessons(res.data.data.lessons || []);
         } catch (error) {
             console.error("Failed to fetch lessons", error);
         } finally {
@@ -46,7 +48,7 @@ const StudentLessons = () => {
                 await axios.delete(`/favorites/${lessonId}`); // or body { lessonId } depending on API
                 setFavorites(prev => prev.filter(id => id !== lessonId));
             } else {
-                await axios.post('/favorites', { lessonId });
+                await axios.post(`/favorites/${lessonId}`);
                 setFavorites(prev => [...prev, lessonId]);
             }
         } catch (error) {
